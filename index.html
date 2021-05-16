@@ -88,8 +88,8 @@
       // GUI
       var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
       var instructions = new BABYLON.GUI.TextBlock();
-      instructions.text = "Move w/ WASD keys, B for Samba, look with the mouse";
-      instructions.color = "white";
+      instructions.text = "Use WASD para andar, F para sambar, gire a visão com o mouse";
+      instructions.color = "black";
       instructions.fontSize = 16;
       instructions.textHorizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_RIGHT
       instructions.textVerticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_BOTTOM
@@ -137,6 +137,7 @@
         var heroSpeed = 0.3;
         var heroSpeedBackwards = 0.01;
         var heroRotationSpeed = 0.1;
+        var heroJumoSpeed = 0.1;
 
         var animating = true;
 
@@ -144,7 +145,7 @@
         const walkBackAnim = scene.getAnimationGroupByName("WalkingBack");
         const idleAnim = scene.getAnimationGroupByName("Idle");
         const sambaAnim = scene.getAnimationGroupByName("Samba");
-
+        const jumpAnim = scene.getAnimationGroupByName("jump-loop");
 
 
         //Rendering loop (executed for everyframe)
@@ -154,7 +155,7 @@
           if (inputMap["w"]) {
             hero.moveWithCollisions(hero.forward.scaleInPlace(heroSpeed));
             keydown = true;
-            // tentativa de desterminar o limite q o player pode ir (ate o final do circulo)
+            // tentativa de determinar o limite q o player pode ir (ate o final do circulo)
             if (hero.position.x > 21.3) { hero.position.x = 0; }
             if (hero.position.x < -21.3) { hero.position.x = 0; }
             if (hero.position.z > 21.3) { hero.position.z = 0; }
@@ -165,6 +166,10 @@
           if (inputMap["s"]) {
             hero.moveWithCollisions(hero.forward.scaleInPlace(-heroSpeedBackwards));
             keydown = true;
+            if (hero.position.x > 21.3) { hero.position.x = 0; }
+            if (hero.position.x < -21.3) { hero.position.x = 0; }
+            if (hero.position.z > 21.3) { hero.position.z = 0; }
+            if (hero.position.z < -21.3) { hero.position.z = 0; }
           }
           if (inputMap["a"]) {
             hero.rotate(BABYLON.Vector3.Up(), -heroRotationSpeed);
@@ -174,9 +179,13 @@
             hero.rotate(BABYLON.Vector3.Up(), heroRotationSpeed);
             keydown = true;
           }
-          if (inputMap["b"]) {
+          if (inputMap["f"]) {
             keydown = true;
           }
+          /*if (inputMap[" "]) {
+            hero.moveWithCollisions(hero.forwardscaleInPlace(heroJumpSpeed));
+            keydown = true;
+          }*/
 
           //Manage animations to be played  
           if (keydown) {
@@ -187,10 +196,15 @@
                 walkBackAnim.start(true, 1.0, walkBackAnim.from, walkBackAnim.to, false);
               }
               else if
-                (inputMap["b"]) {
+                (inputMap["f"]) {
                 //Samba!
                 sambaAnim.start(true, 1.0, sambaAnim.from, sambaAnim.to, false);
               }
+              /*else if
+                (inputMap[" "]) {
+                //pulo
+                jumpAnim.start(true, 1.0, jumpAnim.from, jumpAnim.to, false);
+              }*/
               else {
                 //Walk
                 walkAnim.start(true, 1.0, walkAnim.from, walkAnim.to, false);
