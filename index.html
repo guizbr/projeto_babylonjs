@@ -286,6 +286,39 @@
       UFO.position.y = 3;
       UFO.position.z = 5;        
     });
+
+    BABYLON.SceneLoader.ImportMesh(
+        null,
+        "https://models.babylonjs.com/vintageDeskFan/",
+        "vintageFan_animated.gltf",
+        scene,
+        function (meshes) {
+          var vent = meshes[0];
+          vent.checkCollisions = true;
+          vent.scaling.scaleInPlace(0.07);
+          vent.position.x = -16;
+          vent.position.z = 12;
+          vent.position.y = 0;
+        });
+
+        BABYLON.SceneLoader.ImportMesh("", "https://models.babylonjs.com/", "seagulf.glb", scene, function (meshes) {
+        var pato = meshes[0];
+        pato.checkCollisions = true;
+        pato.scaling.scaleInPlace(0.005);
+        pato.position.x = 6;
+        pato.position.z = -18;
+        pato.position.y = 2.6;
+      });
+
+      BABYLON.SceneLoader.ImportMesh("", "/meshes/", "BoomBox.glb", scene, function (meshes) {          
+        var radio = meshes[0];
+        radio.checkCollisions = true;
+        radio.scaling.scaleInPlace(35);
+        radio.position.x = 1;
+        radio.position.z = 1;
+        radio.position.y = 0.87;
+        
+    });
     
       return scene;
     }
