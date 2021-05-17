@@ -244,7 +244,7 @@
 
       });
 
-      BABYLON.SceneLoader.ImportMesh("","https://models.babylonjs.com/","ExplodingBarrel.glb",scene,function (meshes, particleSystems, skeletons, animationGroup) {
+      BABYLON.SceneLoader.ImportMesh("","/meshes/","ExplodingBarrel.glb",scene,function (meshes, particleSystems, skeletons, animationGroup) {
           var barril = meshes[0];
           barril.checkCollisions = true;
           barril.scaling.scaleInPlace(0.02);
@@ -263,8 +263,19 @@
         skull.position.x = -10;
         skull.position.y = 1;
         skull.position.z = -10;
-
     });
+
+    BABYLON.SceneLoader.ImportMesh("", "/meshes/", "ufo.glb", scene, function (meshes) {          
+      var UFO = meshes[0];
+      UFO.checkCollisions = true;
+      UFO.scaling.scaleInPlace(2);
+      UFO.rotation.x = 0.3;
+      UFO.rotation.y = 3;
+      UFO.position.x = 5;
+      UFO.position.y = 3.5;
+      UFO.position.z = 5;
+    });
+    
       return scene;
     }
       
