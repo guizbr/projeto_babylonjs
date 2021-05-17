@@ -275,6 +275,17 @@
       UFO.position.y = 3.5;
       UFO.position.z = 5;
     });
+
+    BABYLON.SceneLoader.ImportMesh("", "/meshes/", "StanfordBunny.obj", scene, function (meshes) {          
+      var UFO = meshes[0];
+      UFO.checkCollisions = true;
+      UFO.scaling.scaleInPlace(2);
+      UFO.rotation.x = 0.8;
+      UFO.rotation.y = 7;
+      UFO.position.x = 5;
+      UFO.position.y = 3;
+      UFO.position.z = 5;        
+    });
     
       return scene;
     }
