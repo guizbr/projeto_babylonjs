@@ -86,6 +86,8 @@
       skyboxMaterial.disableLighting = true;
       skybox.material = skyboxMaterial;
 
+      
+
       // GUI
       var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
       var instructions = new BABYLON.GUI.TextBlock();
@@ -110,6 +112,8 @@
       var ground2 = BABYLON.MeshBuilder.CreateDisc("ground", { radius: 21.3 }, scene);
       ground2.rotation.x = Math.PI / 2
       ground2.material = groundMaterial;
+
+      
 
 
 
@@ -240,12 +244,7 @@
 
       });
 
-      BABYLON.SceneLoader.ImportMesh(
-        "",
-        "https://models.babylonjs.com/",
-        "ExplodingBarrel.glb",
-        scene,
-        function (meshes, particleSystems, skeletons, animationGroup) {
+      BABYLON.SceneLoader.ImportMesh("","https://models.babylonjs.com/","ExplodingBarrel.glb",scene,function (meshes, particleSystems, skeletons, animationGroup) {
           var barril = meshes[0];
           barril.checkCollisions = true;
           barril.scaling.scaleInPlace(0.02);
@@ -253,8 +252,25 @@
           barril.position.z = 10;
         });
 
+      
+
+      BABYLON.SceneLoader.ImportMesh("", "../meshes/skull/", "skull.babylon", scene, function (meshes) {          
+        var skull = meshes[0];
+        skull.checkCollisions = true;
+        skull.scaling.scaleInPlace(0.03);
+        skull.rotation.x = 0.3;
+        skull.rotation.y = 3;
+        skull.position.x = -10;
+        skull.position.y = 1;
+        skull.position.z = -10;
+
+    });
       return scene;
     }
+      
+
+
+
     window.initFunction = async function () {
       var asyncEngineCreation = async function () {
         try {
