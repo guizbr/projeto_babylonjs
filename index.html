@@ -244,7 +244,7 @@
 
       });
 
-      BABYLON.SceneLoader.ImportMesh("","/meshes/","ExplodingBarrel.glb",scene,function (meshes, particleSystems, skeletons, animationGroup) {
+      BABYLON.SceneLoader.ImportMesh("","meshes/","ExplodingBarrel.glb",scene,function (meshes, particleSystems, skeletons, animationGroup) {
           var barril = meshes[0];
           barril.checkCollisions = true;
           barril.scaling.scaleInPlace(0.02);
@@ -254,7 +254,7 @@
 
       
 
-      BABYLON.SceneLoader.ImportMesh("", "/meshes/skull/", "skull.babylon", scene, function (meshes) {          
+      BABYLON.SceneLoader.ImportMesh("", "meshes/skull/", "skull.babylon", scene, function (meshes) {          
         var skull = meshes[0];
         skull.checkCollisions = true;
         skull.scaling.scaleInPlace(0.03);
@@ -265,7 +265,7 @@
         skull.position.z = -10;
     });
 
-    BABYLON.SceneLoader.ImportMesh("", "/meshes/", "ufo.glb", scene, function (meshes) {          
+    BABYLON.SceneLoader.ImportMesh("", "meshes/", "ufo.glb", scene, function (meshes) {          
       var UFO = meshes[0];
       UFO.checkCollisions = true;
       UFO.scaling.scaleInPlace(2);
@@ -276,7 +276,7 @@
       UFO.position.z = 5;
     });
 
-    BABYLON.SceneLoader.ImportMesh("", "/meshes/", "StanfordBunny.obj", scene, function (meshes) {          
+    BABYLON.SceneLoader.ImportMesh("", "meshes/", "StanfordBunny.obj", scene, function (meshes) {          
       var UFO = meshes[0];
       UFO.checkCollisions = true;
       UFO.scaling.scaleInPlace(2);
@@ -310,7 +310,7 @@
         pato.position.y = 2.6;
       });
 
-      BABYLON.SceneLoader.ImportMesh("", "/meshes/", "BoomBox.glb", scene, function (meshes) {          
+      BABYLON.SceneLoader.ImportMesh("", "meshes/", "BoomBox.glb", scene, function (meshes) {          
         var radio = meshes[0];
         radio.checkCollisions = true;
         radio.scaling.scaleInPlace(35);
