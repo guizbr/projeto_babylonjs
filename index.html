@@ -1,3 +1,5 @@
+<!-- Guilherme Camargo da Silva - 180487 -->
+<!-- Igor Ramos Rodrigues de Oliveira - 180507 -->
 <!DOCTYPE html>
 <html>
 
@@ -140,7 +142,7 @@
         camera1.target = hero;
 
         //Hero character variables 
-        var heroSpeed = 0.3;
+        var heroSpeed = 0.1;
         var heroSpeedBackwards = 0.01;
         var heroRotationSpeed = 0.1;
         var heroJumoSpeed = 0.1;
@@ -169,6 +171,7 @@
             hero.position.y = ground.getHeightAtCoordinates(x, z);
             var distancia = Math.sqrt(Math.pow(x, 2) + Math.pow(z, 2));
             if (distancia > 21.3) {
+              alert("Você caiu! Tenha cuidado.");
               hero.position.x = 0;
               hero.position.z = 0;
             }
@@ -181,6 +184,7 @@
             hero.position.y = ground.getHeightAtCoordinates(x, z);
             var distancia = Math.sqrt(Math.pow(x, 2) + Math.pow(z, 2));
             if (distancia > 21.3) {
+              alert("Você caiu! Tenha cuidado.");
               hero.position.x = 0;
               hero.position.z = 0;
             }
