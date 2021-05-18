@@ -244,7 +244,7 @@
 
       });
 
-      BABYLON.SceneLoader.ImportMesh("","/meshes/","ExplodingBarrel.glb",scene,function (meshes, particleSystems, skeletons, animationGroup) {
+      BABYLON.SceneLoader.ImportMesh("","https://models.babylonjs.com/","ExplodingBarrel.glb",scene,function (meshes, particleSystems, skeletons, animationGroup) {
           var barril = meshes[0];
           barril.checkCollisions = true;
           barril.scaling.scaleInPlace(0.02);
@@ -254,18 +254,18 @@
 
       
 
-      BABYLON.SceneLoader.ImportMesh("", "/meshes/skull/", "skull.babylon", scene, function (meshes) {          
-        var skull = meshes[0];
-        skull.checkCollisions = true;
-        skull.scaling.scaleInPlace(0.03);
-        skull.rotation.x = 0.3;
-        skull.rotation.y = 3;
-        skull.position.x = -10;
-        skull.position.y = 1;
-        skull.position.z = -10;
+        BABYLON.SceneLoader.ImportMesh("", "https://models.babylonjs.com/", "shark.glb", scene, function (meshes) {  
+        var shark = meshes[0];
+        shark.checkCollisions = true;
+        shark.scaling.scaleInPlace(0.7);
+        shark.rotation.x = 0.3;
+        shark.rotation.y = 3;
+        shark.position.x = -10;
+        shark.position.y = 1;
+        shark.position.z = -10;
     });
 
-    BABYLON.SceneLoader.ImportMesh("", "/meshes/", "ufo.glb", scene, function (meshes) {          
+    BABYLON.SceneLoader.ImportMesh("", "https://models.babylonjs.com/", "ufo.glb", scene, function (meshes) {          
       var UFO = meshes[0];
       UFO.checkCollisions = true;
       UFO.scaling.scaleInPlace(2);
@@ -276,15 +276,14 @@
       UFO.position.z = 5;
     });
 
-    BABYLON.SceneLoader.ImportMesh("", "/meshes/", "StanfordBunny.obj", scene, function (meshes) {          
-      var UFO = meshes[0];
-      UFO.checkCollisions = true;
-      UFO.scaling.scaleInPlace(2);
-      UFO.rotation.x = 0.8;
-      UFO.rotation.y = 7;
-      UFO.position.x = 5;
-      UFO.position.y = 3;
-      UFO.position.z = 5;        
+    BABYLON.SceneLoader.ImportMesh("", "https://models.babylonjs.com/", "fish.glb", scene, function (meshes) {          
+      var fishes = meshes[0];
+      fishes.checkCollisions = true;
+      fishes.scaling.scaleInPlace(1.8);
+      fishes.rotation.x = 0.8;
+      fishes.rotation.y = 4;
+      fishes.position.x = 0;
+      fishes.position.y = 0;
     });
 
     BABYLON.SceneLoader.ImportMesh(
@@ -310,13 +309,15 @@
         pato.position.y = 2.6;
       });
 
-      BABYLON.SceneLoader.ImportMesh("", "/meshes/", "BoomBox.glb", scene, function (meshes) {          
-        var radio = meshes[0];
-        radio.checkCollisions = true;
-        radio.scaling.scaleInPlace(35);
-        radio.position.x = 1;
-        radio.position.z = 1;
-        radio.position.y = 0.87;
+      BABYLON.SceneLoader.ImportMesh("","https://models.babylonjs.com/Lee-Perry-Smith-Head/","head.babylon",scene,function (meshes) {                  var radio = meshes[0];
+      var UFO = meshes[0];
+      UFO.checkCollisions = true;
+      UFO.scaling.scaleInPlace(2);
+      UFO.rotation.x = 0.3;
+      UFO.rotation.y = 3;
+      UFO.position.x = 5;
+      UFO.position.y = 2.7;
+      UFO.position.z = 5;
         
     });
     
